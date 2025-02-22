@@ -1,0 +1,16 @@
+package q7;
+
+import com.google.android.gms.internal.measurement.tc;
+import com.google.android.gms.internal.measurement.uc;
+import java.util.List;
+
+public final /* synthetic */ class d1 implements e2 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final /* synthetic */ d1 f12954a = new d1();
+
+    public final Object zza() {
+        List list = g2.f13022a;
+        return Boolean.valueOf(((uc) tc.f5539b.f5540a.zza()).zzc());
+    }
+}

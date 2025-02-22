@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:sweet="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:background="@android:color/black" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="?android:attr/actionBarSize" android:elevation="2dp" sweet:contentInsetEnd="0dp" sweet:contentInsetLeft="0dp" sweet:contentInsetRight="0dp" sweet:contentInsetStart="0dp"/>
+    <FrameLayout android:id="@+id/ftContainer" android:layout_width="match_parent" android:layout_height="match_parent" sweet:layout_constraintBottom_toBottomOf="0" sweet:layout_constraintEnd_toEndOf="0" sweet:layout_constraintStart_toStartOf="0" sweet:layout_constraintTop_toTopOf="0"/>
+</LinearLayout>

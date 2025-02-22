@@ -1,0 +1,19 @@
+package ed;
+
+import ff.m;
+import rf.a;
+import sf.k;
+
+public final class g extends k implements a<m> {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final g f7958a = new g();
+
+    public g() {
+        super(0);
+    }
+
+    public final /* bridge */ /* synthetic */ Object d() {
+        return m.f8717a;
+    }
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:sweet="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Guideline android:orientation="horizontal" android:id="@+id/guideline2" android:layout_width="wrap_content" android:layout_height="wrap_content" sweet:layout_constraintGuide_begin="16dp"/>
+    <com.google.android.material.card.MaterialCardView android:id="@+id/card_history_back" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="16dp" android:layout_marginStart="20dp" sweet:cardCornerRadius="25dp" sweet:cardElevation="15dp" sweet:layout_constraintStart_toStartOf="0" sweet:layout_constraintTop_toTopOf="@+id/guideline2">
+        <ImageView android:id="@+id/imageView2" android:padding="12dp" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_back"/>
+    </com.google.android.material.card.MaterialCardView>
+    <TextView android:textStyle="bold" android:textColor="@color/black_shade_293E4C" android:id="@+id/textView46" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/history_details" sweet:layout_constraintBottom_toBottomOf="@+id/card_history_back" sweet:layout_constraintEnd_toEndOf="0" sweet:layout_constraintStart_toStartOf="0" sweet:layout_constraintTop_toTopOf="@+id/card_history_back" style="@style/Custom_Text_DM_Sans_Medium"/>
+    <ImageView android:id="@+id/iv_hd" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:adjustViewBounds="true" sweet:layout_constraintEnd_toEndOf="0" sweet:layout_constraintHorizontal_bias="0.5" sweet:layout_constraintStart_toStartOf="0" sweet:layout_constraintTop_toBottomOf="@+id/card_history_back"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/hd_ll" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginBottom="16dp" sweet:layout_constraintBottom_toBottomOf="0" sweet:layout_constraintEnd_toEndOf="0" sweet:layout_constraintHorizontal_bias="0.5" sweet:layout_constraintStart_toStartOf="0">
+        <View android:id="@+id/divider" android:background="?android:attr/listDivider" android:layout_width="match_parent" android:layout_height="1dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/tv_hd_date" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/history_detail_date" android:layout_weight="1" style="@style/History_Text_View_Style"/>
+            <TextView android:id="@+id/tv_hd_min_db" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" style="@style/History_Text_View_Style"/>
+        </LinearLayout>
+        <View android:id="@+id/divider2" android:background="?android:attr/listDivider" android:layout_width="match_parent" android:layout_height="1dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/tv_hd_duration" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" style="@style/History_Text_View_Style"/>
+            <TextView android:id="@+id/tv_hd_avd_db" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" style="@style/History_Text_View_Style"/>
+        </LinearLayout>
+        <View android:id="@+id/divider3" android:background="?android:attr/listDivider" android:layout_width="match_parent" android:layout_height="1dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/tv_hd_coins" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" style="@style/History_Text_View_Style"/>
+            <TextView android:id="@+id/tv_hd_max_db" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" style="@style/History_Text_View_Style"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

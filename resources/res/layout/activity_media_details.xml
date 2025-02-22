@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:sweet="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout android:id="@+id/appbar_layout" android:layout_width="match_parent" android:layout_height="wrap_content" sweet:layout_scrollFlags="5">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" sweet:layout_scrollFlags="5"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerview" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/appbar_layout"/>
+    <TextView android:textSize="25sp" android:textStyle="bold" android:gravity="center_horizontal" android:id="@+id/empty_view" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/no_files_found" android:layout_centerInParent="true"/>
+</RelativeLayout>

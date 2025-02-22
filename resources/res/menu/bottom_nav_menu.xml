@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:sweet="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:icon="@drawable/ic_baseline_image_24" android:id="@+id/homeFragment" android:title="Home"/>
+    <item android:icon="@drawable/ic_baseline_broken_image_24" android:id="@+id/mapFragment" android:title="Favourite"/>
+    <item android:icon="@drawable/ic_baseline_broken_image_24" android:id="@+id/walletFragment" android:title="Settings"/>
+    <item android:icon="@drawable/ic_baseline_broken_image_24" android:id="@+id/shopFragment" android:title="Shop"/>
+</menu>

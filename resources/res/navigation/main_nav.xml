@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:sweet="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/main_nav" sweet:startDestination="@+id/homeFragment">
+    <fragment android:label="fragment_home" android:name="com.quickkonnect.silencio.ui.tabs.home.HomeFragment" android:id="@+id/homeFragment">
+        <action android:id="@+id/action_homeFragment_to_askSilencioBottomSheet" sweet:destination="@+id/askSilencioBottomSheet"/>
+    </fragment>
+    <fragment android:label="fragment_map" android:name="com.quickkonnect.silencio.ui.tabs.map.MapFragment" android:id="@+id/mapFragment">
+        <action android:id="@+id/action_mapFragment_to_infoBottomSheet" sweet:destination="@+id/infoBottomSheet"/>
+        <action android:id="@+id/action_mapFragment_to_mapPopupBottomSheet" sweet:destination="@+id/mapPopupBottomSheet"/>
+    </fragment>
+    <fragment android:label="fragment_wallet" android:name="com.quickkonnect.silencio.ui.tabs.wallet.WalletFragment" android:id="@+id/walletFragment"/>
+    <fragment android:label="fragment_on_boarding" android:name="com.quickkonnect.silencio.ui.auth.onboarding.OnBoardingFragment" android:id="@+id/onBoardingFragment">
+        <action android:id="@+id/action_onBoardingFragment_to_homeFragment" sweet:destination="@+id/homeFragment" sweet:popUpTo="@+id/homeFragment" sweet:popUpToInclusive="true"/>
+        <action android:id="@+id/action_onBoardingFragment_to_codeBottomSheet2" sweet:destination="@+id/codeBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+    </fragment>
+    <dialog android:label="bottom_sheet_code" android:name="com.quickkonnect.silencio.ui.auth.code.CodeBottomSheet" android:id="@+id/codeBottomSheet">
+        <action android:id="@+id/action_codeBottomSheet_to_registerBottomSheet" sweet:destination="@+id/registerBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <action android:id="@+id/action_codeBottomSheet_to_loginBottomSheet" sweet:destination="@+id/loginBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+    </dialog>
+    <fragment android:label="fragment_shop" android:name="com.quickkonnect.silencio.ui.tabs.shop.ShopFragment" android:id="@+id/shopFragment"/>
+    <dialog android:label="PhoneNumberBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.phonenumber.PhoneNumberBottomSheet" android:id="@+id/phoneNumberBottomSheet">
+        <action android:id="@+id/action_phoneNumberBottomSheet_to_createAccountBottomSheet" sweet:destination="@+id/createAccountBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <argument android:name="registerUser" sweet:argType="com.quickkonnect.silencio.models.request.auth.RegisterUserRequestModel"/>
+        <action android:id="@+id/action_phoneNumberBottomSheet_to_loginBottomSheet" sweet:destination="@+id/loginBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <action android:id="@+id/action_phoneNumberBottomSheet_to_registerOtpVerificationBottomSheet" sweet:destination="@+id/registerOtpVerificationBottomSheet" sweet:popUpTo="@+id/phoneNumberBottomSheet" sweet:popUpToInclusive="true"/>
+    </dialog>
+    <dialog android:label="RegisterBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.register.RegisterBottomSheet" android:id="@+id/registerBottomSheet">
+        <action android:id="@+id/action_registerBottomSheet_to_phoneNumberBottomSheet" sweet:destination="@+id/phoneNumberBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <argument android:name="registerUser" sweet:argType="com.quickkonnect.silencio.models.request.auth.RegisterUserRequestModel"/>
+        <action android:id="@+id/action_registerBottomSheet_to_loginBottomSheet" sweet:destination="@+id/loginBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <action android:id="@+id/action_registerBottomSheet_to_homeFragment" sweet:destination="@+id/homeFragment" sweet:popUpTo="@+id/onBoardingFragment" sweet:popUpToInclusive="true"/>
+        <action android:id="@+id/action_registerBottomSheet_to_createAccountBottomSheet" sweet:destination="@+id/createAccountBottomSheet" sweet:popUpTo="@+id/registerBottomSheet" sweet:popUpToInclusive="true"/>
+        <action android:id="@+id/action_registerBottomSheet_to_emailBottomSheet" sweet:destination="@+id/emailBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+    </dialog>
+    <dialog android:label="CreateAccountBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.createaccount.CreateAccountBottomSheet" android:id="@+id/createAccountBottomSheet">
+        <action android:id="@+id/action_createAccountBottomSheet_to_choosePasswordBottomSheet" sweet:destination="@+id/choosePasswordBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <argument android:name="registerUser" sweet:argType="com.quickkonnect.silencio.models.request.auth.RegisterUserRequestModel"/>
+        <action android:id="@+id/action_createAccountBottomSheet_to_loginBottomSheet" sweet:destination="@+id/loginBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <argument android:name="email" sweet:argType="string"/>
+        <argument android:name="isGoogleLogin" sweet:argType="boolean"/>
+        <action android:id="@+id/action_createAccountBottomSheet_to_homeFragment" sweet:destination="@+id/homeFragment" sweet:popUpTo="@+id/createAccountBottomSheet" sweet:popUpToInclusive="true"/>
+    </dialog>
+    <dialog android:label="ChoosePasswordBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.chosepassword.ChoosePasswordBottomSheet" android:id="@+id/choosePasswordBottomSheet">
+        <action android:id="@+id/action_choosePasswordBottomSheet_to_homeFragment" sweet:destination="@+id/homeFragment" sweet:popUpTo="@+id/onBoardingFragment" sweet:popUpToInclusive="true"/>
+        <argument android:name="registerUser" sweet:argType="com.quickkonnect.silencio.models.request.auth.RegisterUserRequestModel"/>
+        <action android:id="@+id/action_choosePasswordBottomSheet_to_loginBottomSheet" sweet:destination="@+id/loginBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+    </dialog>
+    <dialog android:label="bottom_sheet_how_to_measure" android:name="com.quickkonnect.silencio.ui.measure.howto.HowToMeasureBottomSheet" android:id="@+id/howToMeasureBottomSheet">
+        <action android:id="@+id/action_howToMeasureBottomSheet_to_measuringBottomSheet" sweet:destination="@+id/measuringBottomSheet" sweet:popUpTo="@+id/howToMeasureBottomSheet" sweet:popUpToInclusive="true"/>
+    </dialog>
+    <dialog android:label="bottom_sheet_measuring" android:name="com.quickkonnect.silencio.ui.measure.measuring.MeasuringBottomSheet" android:id="@+id/measuringBottomSheet">
+        <action android:id="@+id/action_measuringBottomSheet_to_resultBottomSheet" sweet:destination="@+id/resultBottomSheet" sweet:popUpTo="@+id/measuringBottomSheet" sweet:popUpToInclusive="true"/>
+        <action android:id="@+id/action_measuringBottomSheet_to_infoBottomSheet" sweet:destination="@+id/infoBottomSheet"/>
+        <action android:id="@+id/action_measuringBottomSheet_to_claimCoinCongratulationBottomSheet" sweet:destination="@+id/claimCoinCongratulationBottomSheet" sweet:popUpTo="@+id/measuringBottomSheet" sweet:popUpToInclusive="true"/>
+    </dialog>
+    <dialog android:label="LoginBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.login.LoginBottomSheet" android:id="@+id/loginBottomSheet">
+        <action android:id="@+id/action_loginBottomSheet_to_forgotPasswordBottomSheet" sweet:destination="@+id/forgotPasswordBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <action android:id="@+id/action_loginBottomSheet_to_homeFragment" sweet:destination="@+id/homeFragment" sweet:popUpTo="@+id/onBoardingFragment" sweet:popUpToInclusive="true"/>
+    </dialog>
+    <dialog android:label="ForgotPasswordBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.forgotpassword.ForgotPasswordBottomSheet" android:id="@+id/forgotPasswordBottomSheet">
+        <action android:id="@+id/action_forgotPasswordBottomSheet_to_verificationBottomSheet" sweet:destination="@+id/verificationBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <action android:id="@+id/action_forgotPasswordBottomSheet_to_forgotPasswordEmailBottomSheet" sweet:destination="@+id/forgotPasswordEmailBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+    </dialog>
+    <dialog android:label="VerificationBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.verification.VerificationBottomSheet" android:id="@+id/verificationBottomSheet">
+        <action android:id="@+id/action_verificationBottomSheet_to_resetPasswordBottomSheet" sweet:destination="@+id/resetPasswordBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <argument android:name="numberDetail" sweet:argType="com.quickkonnect.silencio.models.request.auth.VerifyNumberRequestModel"/>
+        <argument android:name="registrationType" sweet:argType="string"/>
+    </dialog>
+    <dialog android:label="bottom_sheet_reset_password" android:name="com.quickkonnect.silencio.ui.auth.resetpassword.ResetPasswordBottomSheet" android:id="@+id/resetPasswordBottomSheet">
+        <argument android:name="userId" sweet:argType="string"/>
+        <action android:id="@+id/action_resetPasswordBottomSheet_to_loginBottomSheet" sweet:destination="@+id/loginBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+    </dialog>
+    <fragment android:label="ProfileFragment" android:name="com.quickkonnect.silencio.ui.menu.profile.ProfileFragment" android:id="@+id/profileFragment">
+        <action android:id="@+id/action_profileFragment_to_changePasswordBottomSheet" sweet:destination="@+id/changePasswordBottomSheet"/>
+    </fragment>
+    <dialog android:label="ChangePasswordBottomSheet" android:name="com.quickkonnect.silencio.ui.menu.profile.changepassword.ChangePasswordBottomSheet" android:id="@+id/changePasswordBottomSheet"/>
+    <fragment android:label="HistoryFragment" android:name="com.quickkonnect.silencio.ui.menu.history.HistoryFragment" android:id="@+id/historyFragment">
+        <action android:id="@+id/action_historyFragment_to_historyDetailsFragment" sweet:destination="@+id/historyDetailsFragment" sweet:enterAnim="@anim/slide_in_right" sweet:exitAnim="@anim/slide_out_left" sweet:popEnterAnim="@anim/slide_in_left" sweet:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <dialog android:label="ResultBottomSheet" android:name="com.quickkonnect.silencio.ui.measure.result.ResultBottomSheet" android:id="@+id/resultBottomSheet">
+        <argument android:name="measureData" sweet:argType="com.quickkonnect.silencio.models.request.measure.StopRecordingRequestModel"/>
+        <argument android:name="earnedCoins" sweet:argType="float"/>
+        <argument android:name="screenShot" sweet:argType="string"/>
+        <action android:id="@+id/action_resultBottomSheet_to_calimCoinLoacationBottomSheet" sweet:destination="@+id/calimCoinLoacationBottomSheet" sweet:popUpTo="@+id/resultBottomSheet" sweet:popUpToInclusive="true"/>
+        <action android:id="@+id/action_resultBottomSheet_to_claimCoinCongratulationBottomSheet" sweet:destination="@+id/claimCoinCongratulationBottomSheet" sweet:popUpTo="@+id/resultBottomSheet" sweet:popUpToInclusive="true"/>
+        <argument android:name="decibelList" sweet:argType="float[]"/>
+        <action android:id="@+id/action_resultBottomSheet_to_infoBottomSheet" sweet:destination="@+id/infoBottomSheet"/>
+    </dialog>
+    <dialog android:label="bottom_sheet_ask_silencio" android:name="com.quickkonnect.silencio.ui.tabs.home.ask.AskSilencioBottomSheet" android:id="@+id/askSilencioBottomSheet"/>
+    <dialog android:label="CalimCoinLoacationBottomSheet" android:name="com.quickkonnect.silencio.ui.measure.claimcoin.location.CalimCoinLoacationBottomSheet" android:id="@+id/calimCoinLoacationBottomSheet">
+        <action android:id="@+id/action_calimCoinLoacationBottomSheet_to_claimCoinPlaceBottomSheet" sweet:destination="@+id/claimCoinPlaceBottomSheet" sweet:popUpTo="@+id/calimCoinLoacationBottomSheet" sweet:popUpToInclusive="true"/>
+        <argument android:name="claimCoin" sweet:argType="com.quickkonnect.silencio.models.request.measure.ClaimCoinRequestModel"/>
+        <action android:id="@+id/action_calimCoinLoacationBottomSheet_to_claimCoinPlaceOutdoorBottomSheet" sweet:destination="@+id/claimCoinPlaceOutdoorBottomSheet" sweet:popUpTo="@+id/calimCoinLoacationBottomSheet" sweet:popUpToInclusive="true"/>
+    </dialog>
+    <dialog android:label="ClaimCoinPlaceBottomSheet" android:name="com.quickkonnect.silencio.ui.measure.claimcoin.place.indoor.ClaimCoinPlaceIndoorBottomSheet" android:id="@+id/claimCoinPlaceBottomSheet">
+        <action android:id="@+id/action_claimCoinPlaceBottomSheet_to_claimCoinSourceBottomSheet" sweet:destination="@+id/claimCoinSourceBottomSheet" sweet:popUpTo="@+id/claimCoinPlaceBottomSheet" sweet:popUpToInclusive="true"/>
+        <argument android:name="claimCoin" sweet:argType="com.quickkonnect.silencio.models.request.measure.ClaimCoinRequestModel"/>
+    </dialog>
+    <dialog android:label="ClaimCoinSourceBottomSheet" android:name="com.quickkonnect.silencio.ui.measure.claimcoin.source.indoor.ClaimCoinSourceIndoorBottomSheet" android:id="@+id/claimCoinSourceBottomSheet">
+        <action android:id="@+id/action_claimCoinSourceBottomSheet_to_claimCoinCongratulationBottomSheet" sweet:destination="@+id/claimCoinCongratulationBottomSheet" sweet:popUpTo="@+id/claimCoinSourceBottomSheet" sweet:popUpToInclusive="true"/>
+        <argument android:name="claimCoin" sweet:argType="com.quickkonnect.silencio.models.request.measure.ClaimCoinRequestModel"/>
+    </dialog>
+    <dialog android:label="bottom_sheet_claim_coin_congratulation" android:name="com.quickkonnect.silencio.ui.measure.claimcoin.congratulation.ClaimCoinCongratulationBottomSheet" android:id="@+id/claimCoinCongratulationBottomSheet">
+        <argument android:name="earnedCoins" sweet:argType="string"/>
+        <action android:id="@+id/action_claimCoinCongratulationBottomSheet_to_popupBottomSheet" sweet:destination="@+id/popupBottomSheet"/>
+        <argument android:name="isCapReached" sweet:argType="boolean"/>
+        <argument android:name="hasMicInterrupt" sweet:argType="boolean"/>
+        <argument android:name="isSpeedCapReached" sweet:argType="boolean"/>
+    </dialog>
+    <dialog android:label="ClaimCoinPlaceOutdoorBottomSheet" android:name="com.quickkonnect.silencio.ui.measure.claimcoin.place.outdoor.ClaimCoinPlaceOutdoorBottomSheet" android:id="@+id/claimCoinPlaceOutdoorBottomSheet">
+        <action android:id="@+id/action_claimCoinPlaceOutdoorBottomSheet_to_claimCoinSourceOutdoorBottomSheet" sweet:destination="@+id/claimCoinSourceOutdoorBottomSheet" sweet:popUpTo="@+id/claimCoinPlaceOutdoorBottomSheet" sweet:popUpToInclusive="true"/>
+        <argument android:name="claimCoin" sweet:argType="com.quickkonnect.silencio.models.request.measure.ClaimCoinRequestModel"/>
+    </dialog>
+    <dialog android:label="ClaimCoinSourceOutdoorBottomSheet" android:name="com.quickkonnect.silencio.ui.measure.claimcoin.source.outdoor.ClaimCoinSourceOutdoorBottomSheet" android:id="@+id/claimCoinSourceOutdoorBottomSheet">
+        <action android:id="@+id/action_claimCoinSourceOutdoorBottomSheet_to_claimCoinCongratulationBottomSheet" sweet:destination="@+id/claimCoinCongratulationBottomSheet" sweet:popUpTo="@+id/claimCoinSourceOutdoorBottomSheet" sweet:popUpToInclusive="true"/>
+        <argument android:name="claimCoin" sweet:argType="com.quickkonnect.silencio.models.request.measure.ClaimCoinRequestModel"/>
+    </dialog>
+    <dialog android:label="bottom_sheet_info" android:name="com.quickkonnect.silencio.ui.tabs.map.info.InfoBottomSheet" android:id="@+id/infoBottomSheet"/>
+    <dialog android:label="bottom_sheet_popup" android:name="com.quickkonnect.silencio.ui.measure.measuring.popup.PopupBottomSheet" android:id="@+id/popupBottomSheet">
+        <argument android:name="isCapReached" sweet:argType="boolean"/>
+        <argument android:name="hasMicInterrupt" sweet:argType="boolean"/>
+        <argument android:name="isSpeedCapReached" sweet:argType="boolean"/>
+    </dialog>
+    <dialog android:label="RegisterOtpVerificationBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.otp.RegisterOtpVerificationBottomSheet" android:id="@+id/registerOtpVerificationBottomSheet">
+        <action android:id="@+id/action_registerOtpVerificationBottomSheet_to_createAccountBottomSheet" sweet:destination="@+id/createAccountBottomSheet" sweet:popUpTo="@+id/registerOtpVerificationBottomSheet" sweet:popUpToInclusive="true"/>
+        <argument android:name="registerUser" sweet:argType="com.quickkonnect.silencio.models.request.auth.RegisterUserRequestModel"/>
+    </dialog>
+    <fragment android:label="fragment_history_details" android:name="com.quickkonnect.silencio.ui.menu.history.detail.HistoryDetailsFragment" android:id="@+id/historyDetailsFragment">
+        <argument android:name="audioHistory" sweet:argType="com.quickkonnect.silencio.models.response.menu.AudioHistory"/>
+    </fragment>
+    <dialog android:label="MapPopupBottomSheet" android:name="com.quickkonnect.silencio.ui.tabs.map.popup.MapPopupBottomSheet" android:id="@+id/mapPopupBottomSheet"/>
+    <dialog android:label="EmailBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.email.EmailBottomSheet" android:id="@+id/emailBottomSheet">
+        <argument android:name="registerUser" sweet:argType="com.quickkonnect.silencio.models.request.auth.RegisterUserRequestModel"/>
+        <action android:id="@+id/action_emailBottomSheet_to_loginBottomSheet" sweet:destination="@+id/loginBottomSheet"/>
+        <action android:id="@+id/action_emailBottomSheet_to_registerEmailOtpVerificationBottomSheet" sweet:destination="@+id/registerEmailOtpVerificationBottomSheet"/>
+    </dialog>
+    <dialog android:label="RegisterEmailOtpVerificationBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.otpemail.RegisterEmailOtpVerificationBottomSheet" android:id="@+id/registerEmailOtpVerificationBottomSheet">
+        <argument android:name="registerUser" sweet:argType="com.quickkonnect.silencio.models.request.auth.RegisterUserRequestModel"/>
+        <action android:id="@+id/action_registerEmailOtpVerificationBottomSheet_to_createAccountBottomSheet" sweet:destination="@+id/createAccountBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+    </dialog>
+    <dialog android:label="ForgotPasswordEmailBottomSheet" android:name="com.quickkonnect.silencio.ui.auth.forgotpasswordemail.ForgotPasswordEmailBottomSheet" android:id="@+id/forgotPasswordEmailBottomSheet">
+        <action android:id="@+id/action_forgotPasswordEmailBottomSheet_to_verificationBottomSheet" sweet:destination="@+id/verificationBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+        <action android:id="@+id/action_forgotPasswordEmailBottomSheet_to_forgotPasswordBottomSheet" sweet:destination="@+id/forgotPasswordBottomSheet" sweet:popUpTo="@+id/onBoardingFragment"/>
+    </dialog>
+</navigation>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:sweet="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:icon="@drawable/ic_camera_white" android:id="@+id/menuCamera" android:title="@string/camera" sweet:showAsAction="always"/>
+    <item android:icon="@drawable/ic_done_white" android:id="@+id/menuDone" android:title="@string/done" sweet:showAsAction="always"/>
+</menu>
